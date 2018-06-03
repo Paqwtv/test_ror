@@ -1,24 +1,37 @@
 # README
+* Ruby 2.4.1
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
+* Rails 5.1.4
 
 * System dependencies
 
-* Configuration
+rub:
+`bundle install`
 
-* Database creation
+* Configuration
+change `database.yml` if you need
+
+* Database creation:
+
+run:
+`rake db:create`
 
 * Database initialization
 
+run:
+`rake db:migrate`
+`rake db:seed`
+
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+`rails s`
 
-* Deployment instructions
+The server start in default port:
 
-* ...
+localhost:3000
+
+* Test
+
+run:
+`rspec spec`
+
