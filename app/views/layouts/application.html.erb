@@ -9,6 +9,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+      <%= will_paginate @products, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </div>
   </body>
 </html>

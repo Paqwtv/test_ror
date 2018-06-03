@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= link_to 'Products', root_path %></h1>
+
+<div class='search'>
+  <%= render partial: 'search', locals: { prices: Product.all.pluck(:price) } %>
+</div>
+<div class='search_by_category'>
+  <%= render partial: 'category_select' %>
+</div>
+
+<table class='table table-striped'>
+  <thead class="thead-light">
+    <tr>
+      <th ><%= sort_by 'id', 'ID' %></th>
+      <th ><%= sort_by 'name', 'Product Name' %></th>
+      <th><%= sort_by 'category_id', 'Category' %></th>
+      <th><%= sort_by 'price', 'Price' %></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.id %></td>
+        <td><%= product.name %></td>
+        <td><%= product.category.name %></td>
+        <td><%= product.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
