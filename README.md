@@ -5,7 +5,7 @@
 
 * System dependencies
 
-rub:
+run:
 `bundle install`
 
 * Configuration

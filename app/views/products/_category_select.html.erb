@@ -1,7 +1,7 @@
 <%= form_for :category_ids, url: {action: "index"}, html: { method: "get", class: 'form-inline' } do |f| %>
   <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Category</label>
     <%= f.select '', options_from_collection_for_select(
-        Category.all, 'id', 'name'), {},  {class: 'custom-select my-1 mr-sm-2', id: 'inlineFormCustomSelectPref'} %>
+        Category.all, 'id', 'name', params[:category_ids]), {},  {class: 'custom-select my-1 mr-sm-2', id: 'inlineFormCustomSelectPref'} %>
   <div class="custom-control custom-checkbox my-1 mr-sm-2">
       <%= f.submit "Ok", class: 'btn btn-primary my-1' %>
   </div>

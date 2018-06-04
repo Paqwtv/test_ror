@@ -17,12 +17,12 @@ class FindProducts
   private
 
   def search(scoped, query = nil)
-    query ? scoped.where('name ILIKE ?', "%#{query}%") : scoped
+    query.present? ? scoped.where('name ILIKE ?', "%#{query}%") : scoped
   end
 
   def filter_by_price(scoped, from = nil, to = nil)
-    from ? scoped.where('price > ?', from) : scoped
-    to ? scoped.where('price < ?', to) : scoped
+    scoped = from.present? ? scoped.where('price > ?', from) : scoped
+    to.present? ? scoped.where('price < ?', to) : scoped
   end
 
   def filter_by_category(scoped, category_ids = nil)

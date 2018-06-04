@@ -1,12 +1,12 @@
 <%= form_tag '/', method: "get", class: "form-inline" do %>
   <label class="my-1 mr-2" for="inlineFormCustomSelect">Price</label>
   <div class="custom-control custom-checkbox my-1 mr-sm-2">
-  <%= text_field_tag :from_price, value = prices.min, placeholder:'From', class: 'form-control' %>
-  <%= text_field_tag :to_price, value = prices.max, placeholder:'To', class: 'form-control' %>
-  <%= text_field_tag :name, value = nil, placeholder:'Name', class: 'form-control' %>
+    <%= text_field_tag :from_price, value = params[:from_price], placeholder: "min #{prices.min}", class: 'form-control' %>
+    <%= text_field_tag :to_price, value = params[:to_price], placeholder: "max #{prices.max}", class: 'form-control' %>
+    <%= text_field_tag :name, value = params[:name], placeholder:'Name', class: 'form-control' %>
   </div>
   <div class="custom-control custom-checkbox my-1 mr-sm-2">
-    <%= submit_tag 'Search', name: nil, type: "button", class: "btn btn-primary my-1" %>
+    <%= submit_tag 'Search', name: nil, class: "btn btn-primary my-1" %>
   </div>
 <% end %>
 
